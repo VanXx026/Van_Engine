@@ -9,11 +9,14 @@ extern Van::Application* Van::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	Van::Log::Init();
+	VAN_CORE_ERROR("Initialized Log!");
+	int a = 5;
+	VAN_INFO("Hello! Var = {0}", a);
+
 	auto app = Van::CreateApplication();
 	app->Run();
 	delete app;
 }
 
-#else
-	#error VanEngine only support Windows!
 #endif // VAN_PLATFORM_WINDOWS
